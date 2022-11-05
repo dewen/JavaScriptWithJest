@@ -13,3 +13,14 @@ test('Truthiness', () => {
   expect(v1).not.toBeUndefined()
   expect(v2).toBeTruthy()
 })
+
+describe('Floating point number operations', () => {
+  test(
+    'Floating point arithmetic is not always 100% accurate.',
+    () => {
+      const result = (sum(0.1, 0.2) === 0.3);
+      console.log(result);
+      expect(result).toBeFalsy();
+    }
+  )
+});

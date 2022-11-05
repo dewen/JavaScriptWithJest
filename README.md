@@ -27,3 +27,6 @@
     ```
     ./src/
     ```
+
+## Write beautiful code with ESLint
+
