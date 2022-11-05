@@ -1,9 +1,10 @@
-const sum = require('../src/sum')
-test('add 1 + 2 equals 3', () => {
+const sum = require('../../src/basic/sum')
+
+test('Integer sum - add 1 + 2 equals 3', () => {
   expect(sum(1, 2)).toBe(3)
 })
 
-test('Turthiness', () => {
+test('Truthiness', () => {
   let v1 = null
   let v2 = 1
 
@@ -11,5 +12,4 @@ test('Turthiness', () => {
   expect(v2).not.toBeNull()
   expect(v1).not.toBeUndefined()
   expect(v2).toBeTruthy()
-
 })
