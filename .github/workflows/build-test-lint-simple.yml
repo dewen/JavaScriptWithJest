@@ -13,5 +13,7 @@ jobs:
         uses: actions/setup-node@v1
         with:
           node-version: 16.13
+      - name: Project package install
+        run: npm install
       - name: Install Playwright
         run: npx playwright install --with-deps
