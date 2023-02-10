@@ -1,4 +1,10 @@
-import { person } from '../../src/basic/object';
+import {
+  person,
+  isOwnProp,
+  cat,
+  Shape,
+  square,
+} from '../../src/basic/object';
 // const person = require('../../src/basic/object');
 
 describe('Object properties', () => {
@@ -19,5 +25,17 @@ describe('Object properties', () => {
     console.log(Object.keys(person));
     expect(Object.keys(person)).toStrictEqual(['id', 'weight']);
     expect(Object.keys(person).length).toBe(2);
+
+    expect(isOwnProp(person, 'weight')).toBe(true);
+    expect(isOwnProp(person, 'height')).toBe(true);
+
+    // cat
+    expect(isOwnProp(cat, 'head')).toBe(false);
+    expect(isOwnProp(cat, 'tail')).toBe(true);
+
+    // function properties
+    expect(Object.keys(Shape)).toStrictEqual(['hasBorder']);
+    expect(Object.keys(square)).toStrictEqual(['x', 'y']);
+    expect(square.hasBorder).toBe(undefined);
   });
 });

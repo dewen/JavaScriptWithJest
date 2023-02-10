@@ -1,6 +1,11 @@
 # Jest Practice Samples
 
-## Install
+A project helps JavaScript learner to practice via test driven approach. Install
+this repo and follow the steps in section b) to start coding.
+
+Feel free to clone and contribute back with your code using pull requests.
+
+## a) Install
 
 1. clone this repo
     ```
@@ -14,7 +19,7 @@
     ```
 
 
-## Run tests with JavaScript coding.
+## b) Run tests with JavaScript coding.
 
 
 1. start watching tests
@@ -28,5 +33,5 @@
     ./src/
     ```
 
-## Write beautiful code with ESLint
+
 

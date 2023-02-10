@@ -1,0 +1,49 @@
+import React, {
+  FC,
+  PropsWithChildren,
+} from 'react';
+import { mount, shallow } from 'enzyme';
+
+// unfinished: 2023-01-11
+
+const TestComponent1: FC<PropsWithChildren> = () => {
+  console.log('');
+  return <p className="p1">TC1</p>;
+};
+const TestComponent2: FC<{}> = () => {
+  console.log('');
+  return <p className="p2">TC2</p>;
+};
+const TestComponent3: FC<{}> = () => {
+  console.log('');
+  return <p className="p3">TC3</p>;
+};
+
+let Testable;
+beforeEach(() => {
+  Testable = () => (
+    <div>
+      <TestComponent1>
+        <TestComponent3 />
+      </TestComponent1>
+      <TestComponent2 />
+    </div>
+  );
+});
+
+// test isEdit always false
+describe('asReadOnly', () => {
+  it.skip('finds components', () => {
+    console.log(Testable, '++++++++++');
+    const wrapper = shallow(Testable());
+    console.log(wrapper.html(), '<<<<<<<<<<');
+    expect(wrapper.find(TestComponent1).length).toBe(1);
+    expect(wrapper.find(TestComponent2).length).toBe(1);
+    expect(wrapper.find(TestComponent3).length).toBe(1);
+    expect(wrapper.find('p').length).toBe(0);
+    expect(wrapper.find('div').length).toBe(1);
+    // expect(wrapper.find('.p1').length).toBe(1);
+    // expect(wrapper.contains(TestComponent1)).toBe(true);
+  });
+});
+
